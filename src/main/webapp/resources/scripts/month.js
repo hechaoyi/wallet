@@ -47,7 +47,12 @@ Ext.define("wallet.month", {
 			}, {
 				type : "Category",
 				position : "bottom",
-				fields : "date"
+				fields : "date",
+				label : {
+					rotate : {
+						degrees : 300
+					}
+				}
 			} ],
 			series : [ {
 				type : "column",
@@ -66,8 +71,7 @@ Ext.define("wallet.month", {
 							var date = item.get("date");
 							var category = names[attr.field];
 							var amount = util.currency(attr.value[1]);
-							var percent = util.percent(attr.value[1]
-									/ item.get("total"));
+							var percent = util.percent(attr.value[1] / item.get("total"));
 							var total = util.currency(item.get("total"));
 							this.setTitle(tpl.apply([ date, category, amount,
 									percent, total ]));

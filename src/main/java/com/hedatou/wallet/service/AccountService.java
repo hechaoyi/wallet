@@ -67,7 +67,7 @@ public class AccountService {
 		account.setLastUpdate(new Date());
 		account.setDefaultIncome(false);
 		account.setDefaultOutlay(false);
-		account.setOrderNo(dao.maxOrder());
+		account.setOrderNo(dao.maxOrder() + 1);
 		dao.save(account);
 	}
 
